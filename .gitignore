@@ -1,0 +1,28 @@
+# Environment
+.env
+
+# Vector store
+store/
+
+# Policy corpus (from assessment ZIP)
+policy_corpus/
+
+# Archive (old CrewAI code)
+archive/
+
+# Evaluation output
+evaluation/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.pdf
+graphify-out/

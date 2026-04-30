@@ -1,0 +1,13 @@
+services:
+  rag:
+    build: .
+    stdin_open: true
+    tty: true
+    environment:
+      - PYTHONUNBUFFERED=1
+    env_file:
+      - .env
+    volumes:
+      - ./policy_corpus:/app/policy_corpus
+      - ./evaluation:/app/evaluation
+      - ./store:/app/store
