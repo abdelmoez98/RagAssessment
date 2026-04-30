@@ -11,3 +11,4 @@ services:
       - ./policy_corpus:/app/policy_corpus
       - ./evaluation:/app/evaluation
       - ./store:/app/store
+      - ./.env:/app/.env
