@@ -7,7 +7,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /app
 
 COPY requirements.txt .
-RUN uv sync
+RUN pip install uv
+RUN uv venv
+RUN uv pip install -r requirements.txt
 
 COPY . .
 

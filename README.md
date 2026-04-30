@@ -21,6 +21,7 @@ The corpus contains 43 fictional policy documents (markdown, PDF, DOCX) with del
 
 ```bash
 cp .env.example .env                    # Set GOOGLE_API_KEY
+source .venv/bin/activate               # Activate uv virtual environment
 pip install -r requirements.txt         # Install dependencies
 python ingest.py                        # One-shot — parses, chunks, indexes
 python ask.py "What is the standard notice period at Meridian?"
@@ -69,11 +70,11 @@ docker compose down
 ```bash
 docker compose up -d
 docker compose exec rag bash
-# Copy your corpus into /app/policy_corpus
-# Then:
+# Your corpus should be in ./policy_corpus/ on the host (volume-mounted)
 python ingest.py
 python ask.py "What is the standard notice period?"
 ```
+Dependencies are installed in the image — no venv activation needed inside the container.
 
 ## Architecture
 
